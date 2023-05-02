@@ -58,7 +58,7 @@ python3 -m streamlit run summarizer.py
 
 You should see this image pop up on ```localhost:8501``` automatically.
 
-![App Screenshot](https://paste.pics/9eb14df4da0349be3523ef73e1a33e94)
+![App Screenshot]([https://paste.pics/9eb14df4da0349be3523ef73e1a33e94](https://user-images.githubusercontent.com/13909335/235801065-0e7eb1b2-73fb-422d-baf2-d8944ae2d9bc.png))
 
 
 ## Demo
