@@ -33,6 +33,8 @@ copy and paste your key/value using API_KEY=<your_api_key_no_quotes> format
 
 ## Local Deployment
 
+Note: if you see a ```KeyError: 'upload_url'``` if means you just need to paste in your API key appropriately.
+
 To deploy this project run:
 
 ```bash
