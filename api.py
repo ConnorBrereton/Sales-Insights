@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 headers = {
-    "authorization": 'ff5097cc7746485799110f4a33e09631',
+    "authorization": '',
     "content-type": "application/json"
 }
 
