@@ -3,13 +3,27 @@ import requests
 import pandas as pd
 from api import *
 
+st.set_page_config(
+    page_title="Sales Insights Summarizer",
+    page_icon="💼",
+    layout="centered",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.assemblyai.com/docs',
+        'Report a bug': "https://www.github.com/assemblyai/assemblyai-summarizer/issues",
+        'About': "Developed by Connor Brereton, May 2023"
+    }
+)
+
+st.title('💼 Sales Insights Summarizer 📞')
+
 if 'start_point' not in st.session_state:
     st.session_state['start_point'] = 0
 
 def update_start(start_t):
     st.session_state['start_point'] = int(start_t/1000)
 
-uploaded_file = st.file_uploader('Please upload a file')
+uploaded_file = st.file_uploader('Please upload a file...')
 
 if uploaded_file is not None:
     st.audio(uploaded_file, start_time=st.session_state['start_point'])
@@ -34,9 +48,9 @@ if uploaded_file is not None:
             paragraph_response = requests.get(polling_endpoint + '/paragraphs', headers=headers)
             paragraphs = paragraph_response.json()['paragraphs']
 
-            with st.expander('Expand to see Q&A + context below...'):
+            with st.expander('Expand to see Q&A w/ context below...'):
                 for p in paragraphs:
                     if '?' in p['text']:
-                        st.markdown("* " + p['text'])
+                        st.write(p['text'])
                     else:
                         continue
