@@ -1,7 +1,7 @@
 
 # 💼 Sales Insights 📞
 
-This project allows anyone to upload a video file and be presented with a transcript and extracted questions & answers. The target user is a sales executive that wants to look back at questions asked during a call with a prospect/customer. [Here](https://connorbrereton-sales-insights-summarizer-4owrfp.streamlit.app/) is a link to a live demo if you don't want to deploy locally.
+This project allows anyone to upload a video file and be presented with a transcript and extracted questions & answers. The target user is a sales executive that wants to look back at questions asked during a call with a prospect/customer. [Here](https://connorbrereton-salesinsights.streamlit.app/) is a link to a live demo if you don't want to deploy locally.
 
 
 
