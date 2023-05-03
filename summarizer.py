@@ -20,10 +20,13 @@ st.title('💼 Sales Insights Summarizer 📞')
 if 'start_point' not in st.session_state:
     st.session_state['start_point'] = 0
 
+pos = 0
+response_ans = False
+
 def update_start(start_t):
     st.session_state['start_point'] = int(start_t/1000)
 
-uploaded_file = st.file_uploader('Please upload a file...')
+uploaded_file = st.file_uploader('Powered by AssemblyAI API')
 
 if uploaded_file is not None:
     st.audio(uploaded_file, start_time=st.session_state['start_point'])
@@ -43,14 +46,18 @@ if uploaded_file is not None:
             with st.expander('Expand to see call transcript below...'):
                 st.write(transcript)
 
-            # Get/Show the paragraphs with questions in them
+            # Get/Show the sentences with questions in them
             st.subheader('Q&A - Breakdown')
-            paragraph_response = requests.get(polling_endpoint + '/paragraphs', headers=headers)
-            paragraphs = paragraph_response.json()['paragraphs']
+            paragraph_response = requests.get(polling_endpoint + '/sentences', headers=headers)
+            paragraphs = paragraph_response.json()['sentences']
 
             with st.expander('Expand to see Q&A w/ context below...'):
                 for p in paragraphs:
                     if '?' in p['text']:
-                        st.write(p['text'])
+                        st.write('* ' + 'Q: ' + p['text'])
+                        response_ans = False
+                    elif '?' not in p['text'] and response_ans == False:
+                        st.write('* ' + 'A: ' + p['text'])
+                        response_ans = True
                     else:
                         continue
