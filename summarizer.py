@@ -32,9 +32,9 @@ if 'start_point' not in st.session_state:
 response_ans = False
 
 def update_start(start_t):
-    st.session_state['start_point'] = int(start_t/1000)
+st.session_state['start_point'] = int(start_t/1000)
 
-    uploaded_file = st.file_uploader('Powered by AssemblyAI API')
+uploaded_file = st.file_uploader('Powered by AssemblyAI API')
 
     # Once file is uploaded go ahead and transcribe the audio that's hosted
     # on a CDN.
