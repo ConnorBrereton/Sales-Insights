@@ -41,7 +41,7 @@ def upload_transcribe(audio_file):
     }
 
     response = requests.post(transcript_endpoint, json=json, headers=headers)
-    print('Parsing the transcript ID to run NLP on the transcript...)
+    print('Parsing the transcript ID to run NLP on the transcript...')
     transcript_id = response.json()['id']
     polling_endpoint = transcript_endpoint + "/" + transcript_id
     
