@@ -82,4 +82,4 @@ Below is a demo of how the application can be utilized for call analysis to extr
 - Remove filler words from Q&A - Breakdown.
 - Use profanity filtering to see if prospect/rep used profanity during the call.
 - Add webhooks to avoid using temporary variables to manage state within the application.
-- Can use the ChatGPT API like in (this)[https://github.com/ConnorBrereton/OpenAI/blob/main/0.3_CheckConditions/checker.py] project to extract Q&A faster and put it into a ordered form without the parsing algorithm.
+- Can use the ChatGPT API like in [this](https://github.com/ConnorBrereton/OpenAI/blob/main/0.3_CheckConditions/checker.py) project to extract Q&A faster and put it into a ordered form without the parsing algorithm.
